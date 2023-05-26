@@ -1,0 +1,4 @@
+SELECT m.part_number, m.manufacturer, MIN(m.price) AS lowest_price
+FROM merged_data m
+INNER JOIN sample_supplier s ON m.part_number = s.part_number AND m.manufacturer = s.manufacturer
+GROUP BY m.part_number, m.manufacturer;
